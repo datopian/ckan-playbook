@@ -170,6 +170,12 @@ Request body example (`package_id` is an id or name of a package which this reso
 }
 ```
 
+or you may also upload a file into storage (e.g., S3 bucket). Note that in this case you need to use `multipart-form-data`, for example, using `curl`:
+
+```
+curl -H'Authorization: your-api-key' 'http://127.0.0.1:5000/api/3/action/resource_create' --form upload=@pathtofile --form package_id=my_dataset
+```
+
 Note that there are many other optional metadata attributes you may want to use. See https://docs.ckan.org/en/2.9/api/index.html#ckan.logic.action.create.resource_create.
 
 Response example:
